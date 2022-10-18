@@ -29,7 +29,7 @@ twint.run.Search(c)
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [1;32mIn [5], line 1[0m
+Cell [1;32mIn [4], line 1[0m
 [1;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mtwint[39;00m
 [0;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mnest_asyncio[39;00m
 [0;32m      3[0m nest_asyncio[38;5;241m.[39mapply()
