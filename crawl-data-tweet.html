@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Crawling Data &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Data Crawling" href="crawl-data-pta.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="crawl-data-pta.html">
+   Data Crawling
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Crawling Data
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/crawl-data-tweet.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcrawl-data-tweet.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/crawl-data-tweet.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twint">
+   Twint
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instal-twint">
+     Instal Twint
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nest-asyncio">
+   Nest Asyncio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instal-nest-asyncio">
+     Instal Nest Asyncio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crawl-data-tweet">
+   Crawl Data Tweet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#membaca-data-tweet">
+     Membaca Data Tweet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menyimpan-kedalam-file-csv">
+     Menyimpan Kedalam file CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Crawling Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#twint">
+   Twint
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instal-twint">
+     Instal Twint
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nest-asyncio">
+   Nest Asyncio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instal-nest-asyncio">
+     Instal Nest Asyncio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crawl-data-tweet">
+   Crawl Data Tweet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#membaca-data-tweet">
+     Membaca Data Tweet
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menyimpan-kedalam-file-csv">
+     Menyimpan Kedalam file CSV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-data">
+<h1>Crawling Data<a class="headerlink" href="#crawling-data" title="Permalink to this headline">#</a></h1>
+<p>Data crawling atau perayapan data adalah proses pengambilan data yang tersedia secara online untuk umum. Proses ini kemudian mengimpor informasi atau data yang telah ditemukan ke dalam file lokal di komputer Anda.</p>
+<section id="twint">
+<h2>Twint<a class="headerlink" href="#twint" title="Permalink to this headline">#</a></h2>
+<p>Twint adalah sebuah tools yang digunakan untuk melakukan scrapping dari aplikasi twitter yang disetting secara khusus menggunakan bahasa pemrograman Python. Twint dapat kita gunakan dan jalankan tanpa harus menggunakan API dari Twitter itu sendiri, dengan kapasitas scrapping data maksimalnya adalah 3200 tweet.</p>
+<p>Bukan hanya digunakan pada tweet, twint juga bisa kita gunakan untuk melakukan scrapping pada user, followers, retweet dan sebagainya. Twint memanfaatkan operator pencarian twitter untuk memungkinkan proses penghapusan tweet dari user tertentu, memilih dan memilah informasi-informasi yang sensitif, termasuk email dan nomor telepon di dalamnya.</p>
+<section id="instal-twint">
+<h3>Instal Twint<a class="headerlink" href="#instal-twint" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">cd</span> /content/drive/MyDrive/Tugas_PPW
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[WinError 3] The system cannot find the path specified: &#39;/content/drive/MyDrive/Tugas_PPW&#39;
+D:\Document\jupyter-book\mynewbook
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/twintproject/twint.git
+<span class="o">%</span><span class="k">cd</span> twint
+<span class="o">!</span>pip3 install . -r requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D:\Document\jupyter-book\mynewbook\twint
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fatal: destination path &#39;twint&#39; already exists and is not an empty directory.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Processing d:\document\jupyter-book\mynewbook\twint
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#39;done&#39;
+Requirement already satisfied: aiohttp in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from -r requirements.txt (line 1)) (3.7.0)
+Collecting aiodns
+  Using cached aiodns-3.0.0-py3-none-any.whl (5.0 kB)
+Requirement already satisfied: beautifulsoup4 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from -r requirements.txt (line 3)) (4.11.1)
+Collecting cchardet
+  Using cached cchardet-2.1.7.tar.gz (653 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#39;done&#39;
+Requirement already satisfied: dataclasses in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from -r requirements.txt (line 5)) (0.6)
+Collecting elasticsearch
+  Using cached elasticsearch-8.4.3-py3-none-any.whl (384 kB)
+Collecting pysocks
+  Using cached PySocks-1.7.1-py3-none-any.whl (16 kB)
+Requirement already satisfied: pandas&gt;=0.23.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from -r requirements.txt (line 8)) (1.5.0)
+Collecting aiohttp_socks&lt;=0.4.1
+  Using cached aiohttp_socks-0.4.1-py3-none-any.whl (17 kB)
+Collecting schedule
+  Using cached schedule-1.1.0-py2.py3-none-any.whl (10 kB)
+Collecting geopy
+  Using cached geopy-2.2.0-py3-none-any.whl (118 kB)
+Requirement already satisfied: fake-useragent in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from -r requirements.txt (line 12)) (0.1.11)
+Collecting googletransx
+  Using cached googletransx-2.4.2-py3-none-any.whl
+Requirement already satisfied: attrs&gt;=17.3.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (21.4.0)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (3.0.1)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (3.0.4)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (1.8.1)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp-&gt;-r requirements.txt (line 1)) (6.0.2)
+Collecting pycares&gt;=4.0.0
+  Using cached pycares-4.2.2-cp310-cp310-win_amd64.whl (75 kB)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from beautifulsoup4-&gt;-r requirements.txt (line 3)) (2.3.2.post1)
+Collecting elastic-transport&lt;9,&gt;=8
+  Using cached elastic_transport-8.4.0-py3-none-any.whl (59 kB)
+Requirement already satisfied: pytz&gt;=2020.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2022.2.1)
+Requirement already satisfied: numpy&gt;=1.21.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (1.23.2)
+Requirement already satisfied: python-dateutil&gt;=2.8.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (2.8.2)
+Requirement already satisfied: geographiclib&lt;2,&gt;=1.49 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from geopy-&gt;-r requirements.txt (line 11)) (1.52)
+Requirement already satisfied: requests in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from googletransx-&gt;-r requirements.txt (line 13)) (2.28.1)
+Requirement already satisfied: certifi in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (2022.6.15)
+Requirement already satisfied: urllib3&lt;2,&gt;=1.26.2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from elastic-transport&lt;9,&gt;=8-&gt;elasticsearch-&gt;-r requirements.txt (line 6)) (1.26.12)
+Requirement already satisfied: cffi&gt;=1.5.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (1.15.1)
+Requirement already satisfied: six&gt;=1.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from python-dateutil&gt;=2.8.1-&gt;pandas&gt;=0.23.0-&gt;-r requirements.txt (line 8)) (1.16.0)
+Requirement already satisfied: idna&gt;=2.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp-&gt;-r requirements.txt (line 1)) (3.3)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from requests-&gt;googletransx-&gt;-r requirements.txt (line 13)) (2.1.1)
+Requirement already satisfied: pycparser in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from cffi&gt;=1.5.0-&gt;pycares&gt;=4.0.0-&gt;aiodns-&gt;-r requirements.txt (line 2)) (2.21)
+Building wheels for collected packages: twint, cchardet
+  Building wheel for twint (setup.py): started
+  Building wheel for twint (setup.py): finished with status &#39;done&#39;
+  Created wheel for twint: filename=twint-2.1.21-py3-none-any.whl size=39123 sha256=814508a69cd23b1e8a5a206dfdcb4c7630cae8160a2f704666121f55d9c56bfc
+  Stored in directory: C:\Users\Acer\AppData\Local\Temp\pip-ephem-wheel-cache-46x1qpgi\wheels\85\e5\9c\049fee7b9cad0cce5a4f7a6895c8aaf5f2c25e61b13c7cbed4
+  Building wheel for cchardet (setup.py): started
+  Building wheel for cchardet (setup.py): finished with status &#39;error&#39;
+  Running setup.py clean for cchardet
+Successfully built twint
+Failed to build cchardet
+Installing collected packages: cchardet, schedule, pysocks, geopy, elastic-transport, pycares, googletransx, elasticsearch, aiohttp_socks, aiodns, twint
+  Running setup.py install for cchardet: started
+  Running setup.py install for cchardet: finished with status &#39;error&#39;
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  error: subprocess-exited-with-error
+  
+  python setup.py bdist_wheel did not run successfully.
+  exit code: 1
+  
+  [11 lines of output]
+  running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build\lib.win-amd64-cpython-310
+  creating build\lib.win-amd64-cpython-310\cchardet
+  copying src\cchardet\version.py -&gt; build\lib.win-amd64-cpython-310\cchardet
+  copying src\cchardet\__init__.py -&gt; build\lib.win-amd64-cpython-310\cchardet
+  running build_ext
+  building &#39;cchardet._cchardet&#39; extension
+  error: Microsoft Visual C++ 14.0 or greater is required. Get it with &quot;Microsoft C++ Build Tools&quot;: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for cchardet
+  error: subprocess-exited-with-error
+  
+  Running setup.py install for cchardet did not run successfully.
+  exit code: 1
+  
+  [13 lines of output]
+  running install
+  C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\setuptools\command\install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+    warnings.warn(
+  running build
+  running build_py
+  creating build
+  creating build\lib.win-amd64-cpython-310
+  creating build\lib.win-amd64-cpython-310\cchardet
+  copying src\cchardet\version.py -&gt; build\lib.win-amd64-cpython-310\cchardet
+  copying src\cchardet\__init__.py -&gt; build\lib.win-amd64-cpython-310\cchardet
+  running build_ext
+  building &#39;cchardet._cchardet&#39; extension
+  error: Microsoft Visual C++ 14.0 or greater is required. Get it with &quot;Microsoft C++ Build Tools&quot;: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+  [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: legacy-install-failure
+
+Encountered error while trying to install package.
+
+cchardet
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for output from the failure.
+
+[notice] A new release of pip available: 22.2.2 -&gt; 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="nest-asyncio">
+<h2>Nest Asyncio<a class="headerlink" href="#nest-asyncio" title="Permalink to this headline">#</a></h2>
+<p>Dengan desain asyncio tidak memungkinkan loop acaranya untuk disarangkan. Ini menyajikan masalah praktis: Ketika berada di lingkungan di mana loop acara berada sudah berjalan tidak mungkin menjalankan tugas dan menunggu untuk hasilnya. Mencoba melakukannya akan memberikan kesalahan “<em>RuntimeError: This event loop is already running</em>”</p>
+<p>Masalah muncul di berbagai lingkungan, seperti server web, Aplikasi GUI dan di notebook Jupyter.</p>
+<p>Modul ini menambal asyncio untuk memungkinkan penggunaan “<em>asyncio.run</em>” dan “<em>loop.run_until_complete</em>”</p>
+<section id="instal-nest-asyncio">
+<h3>Instal Nest Asyncio<a class="headerlink" href="#instal-nest-asyncio" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install nest_asyncio
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nest_asyncio in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (1.5.5)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.2 -&gt; 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install <span class="nv">aiohttp</span><span class="o">==</span><span class="m">3</span>.7.0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: aiohttp==3.7.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (3.7.0)
+Requirement already satisfied: multidict&lt;7.0,&gt;=4.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp==3.7.0) (6.0.2)
+Requirement already satisfied: chardet&lt;4.0,&gt;=2.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp==3.7.0) (3.0.4)
+Requirement already satisfied: attrs&gt;=17.3.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp==3.7.0) (21.4.0)
+Requirement already satisfied: async-timeout&lt;4.0,&gt;=3.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp==3.7.0) (3.0.1)
+Requirement already satisfied: yarl&lt;2.0,&gt;=1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from aiohttp==3.7.0) (1.8.1)
+Requirement already satisfied: idna&gt;=2.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from yarl&lt;2.0,&gt;=1.0-&gt;aiohttp==3.7.0) (3.3)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.2 -&gt; 22.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="crawl-data-tweet">
+<h2>Crawl Data Tweet<a class="headerlink" href="#crawl-data-tweet" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">twint</span>
+<span class="kn">import</span> <span class="nn">nest_asyncio</span>
+<span class="n">nest_asyncio</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">twint</span><span class="o">.</span><span class="n">Config</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Search</span> <span class="o">=</span> <span class="s1">&#39;Universitas Trunojoyo Madura&#39;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Pandas</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Limit</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">twint</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="n">Search</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">twint</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">nest_asyncio</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">nest_asyncio</span><span class="o">.</span><span class="n">apply</span><span class="p">()</span>
+
+<span class="n">File</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Document</span>\<span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>\<span class="n">mynewbook</span>\<span class="n">twint</span>\<span class="n">twint</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">14</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">.__version__</span> <span class="kn">import</span> <span class="n">__version__</span>
+<span class="ne">---&gt; </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">run</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">_levels</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="s1">&#39;info&#39;</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="p">}</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">_level</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TWINT_DEBUG&#39;</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">)</span>
+
+<span class="n">File</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Document</span>\<span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>\<span class="n">mynewbook</span>\<span class="n">twint</span>\<span class="n">twint</span>\<span class="n">run</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">datetime</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">asyncio</span> <span class="kn">import</span> <span class="n">get_event_loop</span><span class="p">,</span> <span class="ne">TimeoutError</span><span class="p">,</span> <span class="n">ensure_future</span><span class="p">,</span> <span class="n">new_event_loop</span><span class="p">,</span> <span class="n">set_event_loop</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">datelock</span><span class="p">,</span> <span class="n">feed</span><span class="p">,</span> <span class="n">get</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">storage</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">.token</span> <span class="kn">import</span> <span class="n">TokenExpiryException</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">token</span>
+
+<span class="n">File</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Document</span>\<span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>\<span class="n">mynewbook</span>\<span class="n">twint</span>\<span class="n">twint</span>\<span class="n">datelock</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">datetime</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">logging</span> <span class="k">as</span> <span class="nn">logme</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">.tweet</span> <span class="kn">import</span> <span class="n">utc_to_local</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">class</span> <span class="nc">Datelock</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">until</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">File</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Document</span>\<span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>\<span class="n">mynewbook</span>\<span class="n">twint</span>\<span class="n">twint</span>\<span class="n">tweet</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">logging</span> <span class="k">as</span> <span class="nn">logme</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">googletransx</span> <span class="kn">import</span> <span class="n">Translator</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># ref. </span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># - https://github.com/x0rzkov/py-googletrans#basic-usage</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">translator</span> <span class="o">=</span> <span class="n">Translator</span><span class="p">()</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;googletransx&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="membaca-data-tweet">
+<h3>Membaca Data Tweet<a class="headerlink" href="#membaca-data-tweet" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tweets_dfs</span> <span class="o">=</span> <span class="n">twint</span><span class="o">.</span><span class="n">storage</span><span class="o">.</span><span class="n">panda</span><span class="o">.</span><span class="n">Tweets_df</span>
+<span class="n">Tweets_dfs</span><span class="p">[</span><span class="s2">&quot;tweet&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     PENANDATANGANAN NOTA KESEPAHAMAN DAN PERJANJIA...
+1     DESA BINAAN  BERBASIS POTENSI LOKAL  “ PENTING...
+2     Download Logo Universitas Trunojoyo Madura Vec...
+3     [Unit Kegiatan Mahasiswa Universitas Trunojoyo...
+4     KONGRES IKATAN ALUMNI FAKULTAS HUKUM UNIVERSIT...
+5     [UKM PADUAN SUARA GOLDEN UNIVERSITAS TRUNOJOYO...
+6     BEDAH BUKU BIOGRAFI SYAICHONA MOH. CHOLIL GURU...
+7              @sbmptnfess Universitas trunojoyo madura
+8     Anggota kelompok : -Mohammad Afrizal (22011110...
+9     Anggota kelompok : -Mohammad Afrizal (22011110...
+10    @convomfs UTM. Universitas Trunojoyo Madura mu...
+11    [UKM PADUAN SUARA GOLDEN UNIVERSITAS TRUNOJOYO...
+12    Baru saja mengirim foto @ Universitas Trunojoy...
+13    universitas Trunojoyo madura. ukt paling tingg...
+14    Apakah langkah Partai Nasdem terlalu cepat ?  ...
+15    1. Wakil Ketua MK Aswanto memberikan ceramah d...
+16    [UKM PADUAN SUARA GOLDEN UNIVERSITAS TRUNOJOYO...
+17    [UKM PADUAN SUARA GOLDEN UNIVERSITAS TRUNOJOYO...
+Name: tweet, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menyimpan-kedalam-file-csv">
+<h3>Menyimpan Kedalam file CSV<a class="headerlink" href="#menyimpan-kedalam-file-csv" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tweets_dfs</span><span class="p">[</span><span class="s2">&quot;tweet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;utm.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="crawl-data-pta.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Data Crawling</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

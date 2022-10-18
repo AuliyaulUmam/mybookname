@@ -52,6 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Crawling Data" href="crawl-data-tweet.html" />
     <link rel="prev" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -131,6 +132,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Data Crawling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="crawl-data-tweet.html">
+   Crawling Data
   </a>
  </li>
 </ul>
@@ -465,42 +471,42 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scrapy in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (2.6.2)
-Requirement already satisfied: w3lib&gt;=1.17.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (2.0.1)
-Requirement already satisfied: lxml&gt;=3.5.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (4.9.1)
-Requirement already satisfied: protego&gt;=0.1.15 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (0.2.1)
-Requirement already satisfied: itemadapter&gt;=0.1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (0.7.0)
+Requirement already satisfied: service-identity&gt;=16.0.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (21.1.0)
+Requirement already satisfied: parsel&gt;=1.5.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (1.6.0)
 Requirement already satisfied: cssselect&gt;=0.9.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (1.1.0)
-Requirement already satisfied: PyDispatcher&gt;=2.0.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (2.0.5)
-Requirement already satisfied: itemloaders&gt;=1.0.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (1.0.6)
 Requirement already satisfied: cryptography&gt;=2.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (37.0.4)
 Requirement already satisfied: tldextract in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (3.3.1)
-Requirement already satisfied: service-identity&gt;=16.0.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (21.1.0)
 Requirement already satisfied: queuelib&gt;=1.4.2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (1.6.2)
-Requirement already satisfied: zope.interface&gt;=4.1.3 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (5.4.0)
-Requirement already satisfied: setuptools in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (63.2.0)
+Requirement already satisfied: PyDispatcher&gt;=2.0.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (2.0.5)
 Requirement already satisfied: pyOpenSSL&gt;=16.2.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (22.0.0)
-Requirement already satisfied: parsel&gt;=1.5.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (1.6.0)
+Requirement already satisfied: setuptools in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (63.2.0)
+Requirement already satisfied: itemloaders&gt;=1.0.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (1.0.6)
 Requirement already satisfied: Twisted&gt;=17.9.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (22.4.0)
+Requirement already satisfied: w3lib&gt;=1.17.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (2.0.1)
+Requirement already satisfied: protego&gt;=0.1.15 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (0.2.1)
+Requirement already satisfied: lxml&gt;=3.5.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (4.9.1)
+Requirement already satisfied: itemadapter&gt;=0.1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (0.7.0)
+Requirement already satisfied: zope.interface&gt;=4.1.3 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (5.4.0)
 Requirement already satisfied: cffi&gt;=1.12 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from cryptography&gt;=2.0-&gt;scrapy) (1.15.1)
 Requirement already satisfied: jmespath&gt;=0.9.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from itemloaders&gt;=1.0.1-&gt;scrapy) (1.0.1)
 Requirement already satisfied: six&gt;=1.6.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from parsel&gt;=1.5.0-&gt;scrapy) (1.16.0)
 Requirement already satisfied: pyasn1-modules in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from service-identity&gt;=16.0.0-&gt;scrapy) (0.2.8)
 Requirement already satisfied: pyasn1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from service-identity&gt;=16.0.0-&gt;scrapy) (0.4.8)
 Requirement already satisfied: attrs&gt;=19.1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from service-identity&gt;=16.0.0-&gt;scrapy) (21.4.0)
-Requirement already satisfied: typing-extensions&gt;=3.6.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (4.3.0)
-Requirement already satisfied: incremental&gt;=21.3.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (21.3.0)
-Requirement already satisfied: Automat&gt;=0.8.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (20.2.0)
-Requirement already satisfied: twisted-iocpsupport&lt;2,&gt;=1.0.2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (1.0.2)
 Requirement already satisfied: hyperlink&gt;=17.1.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (21.0.0)
 Requirement already satisfied: constantly&gt;=15.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (15.1.0)
-Requirement already satisfied: filelock&gt;=3.0.8 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (3.8.0)
-Requirement already satisfied: requests&gt;=2.1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (2.28.1)
-Requirement already satisfied: requests-file&gt;=1.4 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (1.5.1)
+Requirement already satisfied: typing-extensions&gt;=3.6.5 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (4.3.0)
+Requirement already satisfied: twisted-iocpsupport&lt;2,&gt;=1.0.2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (1.0.2)
+Requirement already satisfied: Automat&gt;=0.8.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (20.2.0)
+Requirement already satisfied: incremental&gt;=21.3.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from Twisted&gt;=17.9.0-&gt;scrapy) (21.3.0)
 Requirement already satisfied: idna in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (3.3)
+Requirement already satisfied: requests-file&gt;=1.4 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (1.5.1)
+Requirement already satisfied: requests&gt;=2.1.0 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (2.28.1)
+Requirement already satisfied: filelock&gt;=3.0.8 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from tldextract-&gt;scrapy) (3.8.0)
 Requirement already satisfied: pycparser in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from cffi&gt;=1.12-&gt;cryptography&gt;=2.0-&gt;scrapy) (2.21)
-Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from requests&gt;=2.1.0-&gt;tldextract-&gt;scrapy) (2.1.1)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from requests&gt;=2.1.0-&gt;tldextract-&gt;scrapy) (2022.6.15)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from requests&gt;=2.1.0-&gt;tldextract-&gt;scrapy) (1.26.12)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from requests&gt;=2.1.0-&gt;tldextract-&gt;scrapy) (2022.6.15)
+Requirement already satisfied: charset-normalizer&lt;3,&gt;=2 in c:\users\acer\appdata\local\programs\python\python310\lib\site-packages (from requests&gt;=2.1.0-&gt;tldextract-&gt;scrapy) (2.1.1)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip available: 22.2.2 -&gt; 22.3
@@ -519,12 +525,10 @@ Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in c:\users\acer\appd
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>New Scrapy project &#39;scrapyPTA&#39;, using template directory &#39;C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\scrapy\templates\project&#39;, created in:
-    D:\Document\jupyter-book\mynewbook\scrapyPTA
-
-You can start your first spider with:
-    cd scrapyPTA
-    scrapy genspider example example.com
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: scrapy.cfg already exists in D:\Document\jupyter-book\mynewbook\scrapyPTA
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -555,7 +559,7 @@ You can start your first spider with:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Created spider &#39;webpta&#39; using template &#39;basic&#39; in module:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Spider &#39;webpta&#39; already exists in module:
   scrapyPTA.spiders.webpta
 </pre></div>
 </div>
@@ -609,21 +613,21 @@ You can start your first spider with:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-10-18 22:34:03 [scrapy.utils.log] INFO: Scrapy 2.6.2 started (bot: scrapyPTA)
-2022-10-18 22:34:03 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 2.0.1, Twisted 22.4.0, Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 3.0.5 5 Jul 2022), cryptography 37.0.4, Platform Windows-10-10.0.19044-SP0
-2022-10-18 22:34:03 [scrapy.crawler] INFO: Overridden settings:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-10-18 22:43:04 [scrapy.utils.log] INFO: Scrapy 2.6.2 started (bot: scrapyPTA)
+2022-10-18 22:43:04 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 2.0.1, Twisted 22.4.0, Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 3.0.5 5 Jul 2022), cryptography 37.0.4, Platform Windows-10-10.0.19044-SP0
+2022-10-18 22:43:04 [scrapy.crawler] INFO: Overridden settings:
 {&#39;BOT_NAME&#39;: &#39;scrapyPTA&#39;,
  &#39;NEWSPIDER_MODULE&#39;: &#39;scrapyPTA.spiders&#39;,
  &#39;ROBOTSTXT_OBEY&#39;: True,
  &#39;SPIDER_LOADER_WARN_ONLY&#39;: True,
  &#39;SPIDER_MODULES&#39;: [&#39;scrapyPTA.spiders&#39;]}
-2022-10-18 22:34:03 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
-2022-10-18 22:34:03 [scrapy.extensions.telnet] INFO: Telnet Password: 8f80c77005d567f0
-2022-10-18 22:34:03 [scrapy.middleware] INFO: Enabled extensions:
+2022-10-18 22:43:04 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-10-18 22:43:04 [scrapy.extensions.telnet] INFO: Telnet Password: d6d358161a4dbd4f
+2022-10-18 22:43:04 [scrapy.middleware] INFO: Enabled extensions:
 [&#39;scrapy.extensions.corestats.CoreStats&#39;,
  &#39;scrapy.extensions.telnet.TelnetConsole&#39;,
  &#39;scrapy.extensions.logstats.LogStats&#39;]
-2022-10-18 22:34:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2022-10-18 22:43:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
 [&#39;scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware&#39;,
@@ -636,40 +640,40 @@ You can start your first spider with:
  &#39;scrapy.downloadermiddlewares.cookies.CookiesMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.stats.DownloaderStats&#39;]
-2022-10-18 22:34:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+2022-10-18 22:43:05 [scrapy.middleware] INFO: Enabled spider middlewares:
 [&#39;scrapy.spidermiddlewares.httperror.HttpErrorMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.offsite.OffsiteMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.referer.RefererMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.urllength.UrlLengthMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.depth.DepthMiddleware&#39;]
-2022-10-18 22:34:04 [scrapy.middleware] INFO: Enabled item pipelines:
+2022-10-18 22:43:05 [scrapy.middleware] INFO: Enabled item pipelines:
 []
-2022-10-18 22:34:04 [scrapy.core.engine] INFO: Spider opened
-2022-10-18 22:34:04 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2022-10-18 22:34:04 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2022-10-18 22:34:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; from &lt;GET http://pta.trunojoyo.ac.id/robots.txt&gt;
-2022-10-18 22:34:05 [py.warnings] WARNING: C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\scrapy\core\engine.py:279: ScrapyDeprecationWarning: Passing a &#39;spider&#39; argument to ExecutionEngine.download is deprecated
+2022-10-18 22:43:05 [scrapy.core.engine] INFO: Spider opened
+2022-10-18 22:43:05 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-10-18 22:43:05 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-10-18 22:43:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; from &lt;GET http://pta.trunojoyo.ac.id/robots.txt&gt;
+2022-10-18 22:43:05 [py.warnings] WARNING: C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\scrapy\core\engine.py:279: ScrapyDeprecationWarning: Passing a &#39;spider&#39; argument to ExecutionEngine.download is deprecated
   return self.download(result, spider) if isinstance(result, Request) else result
 
-2022-10-18 22:34:05 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; (referer: None)
-2022-10-18 22:34:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/&gt; from &lt;GET http://pta.trunojoyo.ac.id/&gt;
-2022-10-18 22:34:07 [filelock] DEBUG: Attempting to acquire lock 2223400875488 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:07 [filelock] DEBUG: Lock 2223400875488 acquired on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:07 [filelock] DEBUG: Attempting to release lock 2223400875488 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:07 [filelock] DEBUG: Lock 2223400875488 released on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:07 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/&gt; (referer: None)
-2022-10-18 22:34:07 [scrapy.core.engine] INFO: Closing spider (finished)
-2022-10-18 22:34:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+2022-10-18 22:43:06 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; (referer: None)
+2022-10-18 22:43:06 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/&gt; from &lt;GET http://pta.trunojoyo.ac.id/&gt;
+2022-10-18 22:43:07 [filelock] DEBUG: Attempting to acquire lock 2646689627728 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:07 [filelock] DEBUG: Lock 2646689627728 acquired on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:07 [filelock] DEBUG: Attempting to release lock 2646689627728 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:07 [filelock] DEBUG: Lock 2646689627728 released on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:07 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/&gt; (referer: None)
+2022-10-18 22:43:07 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-10-18 22:43:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {&#39;downloader/request_bytes&#39;: 896,
  &#39;downloader/request_count&#39;: 4,
  &#39;downloader/request_method_count/GET&#39;: 4,
- &#39;downloader/response_bytes&#39;: 7302,
+ &#39;downloader/response_bytes&#39;: 7308,
  &#39;downloader/response_count&#39;: 4,
  &#39;downloader/response_status_count/200&#39;: 2,
  &#39;downloader/response_status_count/301&#39;: 2,
- &#39;elapsed_time_seconds&#39;: 2.924372,
+ &#39;elapsed_time_seconds&#39;: 2.490842,
  &#39;finish_reason&#39;: &#39;finished&#39;,
- &#39;finish_time&#39;: datetime.datetime(2022, 10, 18, 15, 34, 7, 396667),
+ &#39;finish_time&#39;: datetime.datetime(2022, 10, 18, 15, 43, 7, 876932),
  &#39;httpcompression/response_bytes&#39;: 17488,
  &#39;httpcompression/response_count&#39;: 1,
  &#39;log_count/DEBUG&#39;: 9,
@@ -683,8 +687,8 @@ You can start your first spider with:
  &#39;scheduler/dequeued/memory&#39;: 2,
  &#39;scheduler/enqueued&#39;: 2,
  &#39;scheduler/enqueued/memory&#39;: 2,
- &#39;start_time&#39;: datetime.datetime(2022, 10, 18, 15, 34, 4, 472295)}
-2022-10-18 22:34:07 [scrapy.core.engine] INFO: Spider closed (finished)
+ &#39;start_time&#39;: datetime.datetime(2022, 10, 18, 15, 43, 5, 386090)}
+2022-10-18 22:43:07 [scrapy.core.engine] INFO: Spider closed (finished)
 </pre></div>
 </div>
 </div>
@@ -699,21 +703,21 @@ You can start your first spider with:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-10-18 22:34:08 [scrapy.utils.log] INFO: Scrapy 2.6.2 started (bot: scrapyPTA)
-2022-10-18 22:34:08 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 2.0.1, Twisted 22.4.0, Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 3.0.5 5 Jul 2022), cryptography 37.0.4, Platform Windows-10-10.0.19044-SP0
-2022-10-18 22:34:08 [scrapy.crawler] INFO: Overridden settings:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-10-18 22:43:09 [scrapy.utils.log] INFO: Scrapy 2.6.2 started (bot: scrapyPTA)
+2022-10-18 22:43:09 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.12, cssselect 1.1.0, parsel 1.6.0, w3lib 2.0.1, Twisted 22.4.0, Python 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)], pyOpenSSL 22.0.0 (OpenSSL 3.0.5 5 Jul 2022), cryptography 37.0.4, Platform Windows-10-10.0.19044-SP0
+2022-10-18 22:43:09 [scrapy.crawler] INFO: Overridden settings:
 {&#39;BOT_NAME&#39;: &#39;scrapyPTA&#39;,
  &#39;NEWSPIDER_MODULE&#39;: &#39;scrapyPTA.spiders&#39;,
  &#39;ROBOTSTXT_OBEY&#39;: True,
  &#39;SPIDER_MODULES&#39;: [&#39;scrapyPTA.spiders&#39;]}
-2022-10-18 22:34:08 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
-2022-10-18 22:34:08 [scrapy.extensions.telnet] INFO: Telnet Password: e29cc39712e2258d
-2022-10-18 22:34:08 [scrapy.middleware] INFO: Enabled extensions:
+2022-10-18 22:43:09 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.selectreactor.SelectReactor
+2022-10-18 22:43:09 [scrapy.extensions.telnet] INFO: Telnet Password: c364e0d47ff109a7
+2022-10-18 22:43:09 [scrapy.middleware] INFO: Enabled extensions:
 [&#39;scrapy.extensions.corestats.CoreStats&#39;,
  &#39;scrapy.extensions.telnet.TelnetConsole&#39;,
  &#39;scrapy.extensions.feedexport.FeedExporter&#39;,
  &#39;scrapy.extensions.logstats.LogStats&#39;]
-2022-10-18 22:34:09 [scrapy.middleware] INFO: Enabled downloader middlewares:
+2022-10-18 22:43:09 [scrapy.middleware] INFO: Enabled downloader middlewares:
 [&#39;scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware&#39;,
@@ -726,40 +730,40 @@ You can start your first spider with:
  &#39;scrapy.downloadermiddlewares.cookies.CookiesMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware&#39;,
  &#39;scrapy.downloadermiddlewares.stats.DownloaderStats&#39;]
-2022-10-18 22:34:09 [scrapy.middleware] INFO: Enabled spider middlewares:
+2022-10-18 22:43:09 [scrapy.middleware] INFO: Enabled spider middlewares:
 [&#39;scrapy.spidermiddlewares.httperror.HttpErrorMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.offsite.OffsiteMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.referer.RefererMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.urllength.UrlLengthMiddleware&#39;,
  &#39;scrapy.spidermiddlewares.depth.DepthMiddleware&#39;]
-2022-10-18 22:34:09 [scrapy.middleware] INFO: Enabled item pipelines:
+2022-10-18 22:43:09 [scrapy.middleware] INFO: Enabled item pipelines:
 []
-2022-10-18 22:34:09 [scrapy.core.engine] INFO: Spider opened
-2022-10-18 22:34:09 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
-2022-10-18 22:34:09 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
-2022-10-18 22:34:09 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; from &lt;GET http://pta.trunojoyo.ac.id/robots.txt&gt;
-2022-10-18 22:34:09 [py.warnings] WARNING: C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\scrapy\core\engine.py:279: ScrapyDeprecationWarning: Passing a &#39;spider&#39; argument to ExecutionEngine.download is deprecated
+2022-10-18 22:43:09 [scrapy.core.engine] INFO: Spider opened
+2022-10-18 22:43:09 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-10-18 22:43:09 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-10-18 22:43:09 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; from &lt;GET http://pta.trunojoyo.ac.id/robots.txt&gt;
+2022-10-18 22:43:09 [py.warnings] WARNING: C:\Users\Acer\AppData\Local\Programs\Python\Python310\lib\site-packages\scrapy\core\engine.py:279: ScrapyDeprecationWarning: Passing a &#39;spider&#39; argument to ExecutionEngine.download is deprecated
   return self.download(result, spider) if isinstance(result, Request) else result
 
-2022-10-18 22:34:10 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; (referer: None)
-2022-10-18 22:34:10 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/&gt; from &lt;GET http://pta.trunojoyo.ac.id/&gt;
-2022-10-18 22:34:12 [filelock] DEBUG: Attempting to acquire lock 2367612916960 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:12 [filelock] DEBUG: Lock 2367612916960 acquired on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:12 [filelock] DEBUG: Attempting to release lock 2367612916960 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:12 [filelock] DEBUG: Lock 2367612916960 released on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
-2022-10-18 22:34:12 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/&gt; (referer: None)
-2022-10-18 22:34:12 [scrapy.core.engine] INFO: Closing spider (finished)
-2022-10-18 22:34:12 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+2022-10-18 22:43:10 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/robots.txt&gt; (referer: None)
+2022-10-18 22:43:10 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to &lt;GET https://pta.trunojoyo.ac.id/&gt; from &lt;GET http://pta.trunojoyo.ac.id/&gt;
+2022-10-18 22:43:11 [filelock] DEBUG: Attempting to acquire lock 2400282417504 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:11 [filelock] DEBUG: Lock 2400282417504 acquired on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:11 [filelock] DEBUG: Attempting to release lock 2400282417504 on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:11 [filelock] DEBUG: Lock 2400282417504 released on C:\Users\Acer\.cache\python-tldextract\3.10.6.final__Python310__1f9a7c__tldextract-3.3.1\publicsuffix.org-tlds\de84b5ca2167d4c83e38fb162f2e8738.tldextract.json.lock
+2022-10-18 22:43:11 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://pta.trunojoyo.ac.id/&gt; (referer: None)
+2022-10-18 22:43:11 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-10-18 22:43:11 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
 {&#39;downloader/request_bytes&#39;: 896,
  &#39;downloader/request_count&#39;: 4,
  &#39;downloader/request_method_count/GET&#39;: 4,
- &#39;downloader/response_bytes&#39;: 7312,
+ &#39;downloader/response_bytes&#39;: 7303,
  &#39;downloader/response_count&#39;: 4,
  &#39;downloader/response_status_count/200&#39;: 2,
  &#39;downloader/response_status_count/301&#39;: 2,
- &#39;elapsed_time_seconds&#39;: 3.509632,
+ &#39;elapsed_time_seconds&#39;: 1.755556,
  &#39;finish_reason&#39;: &#39;finished&#39;,
- &#39;finish_time&#39;: datetime.datetime(2022, 10, 18, 15, 34, 12, 872624),
+ &#39;finish_time&#39;: datetime.datetime(2022, 10, 18, 15, 43, 11, 602756),
  &#39;httpcompression/response_bytes&#39;: 17488,
  &#39;httpcompression/response_count&#39;: 1,
  &#39;log_count/DEBUG&#39;: 9,
@@ -773,8 +777,8 @@ You can start your first spider with:
  &#39;scheduler/dequeued/memory&#39;: 2,
  &#39;scheduler/enqueued&#39;: 2,
  &#39;scheduler/enqueued/memory&#39;: 2,
- &#39;start_time&#39;: datetime.datetime(2022, 10, 18, 15, 34, 9, 362992)}
-2022-10-18 22:34:12 [scrapy.core.engine] INFO: Spider closed (finished)
+ &#39;start_time&#39;: datetime.datetime(2022, 10, 18, 15, 43, 9, 847200)}
+2022-10-18 22:43:11 [scrapy.core.engine] INFO: Spider closed (finished)
 </pre></div>
 </div>
 </div>
@@ -815,6 +819,13 @@ You can start your first spider with:
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Notebooks with MyST Markdown</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="crawl-data-tweet.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Crawling Data</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
